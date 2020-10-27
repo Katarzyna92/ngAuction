@@ -1,4 +1,4 @@
-import { ProductService } from './shared/product.service';
+import { ProductService } from './product.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
@@ -12,7 +12,7 @@ import { ProductItemComponent } from './product-item/product-item.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { SearchComponent } from './search/search.component';
 import { StarsComponent } from './stars/stars.component';
-import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+// import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 
 
 @NgModule({
@@ -31,7 +31,8 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  // providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],
+  providers: [ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
