@@ -1,4 +1,27 @@
-<form name="searchForm">
+
+<form #f="ngForm">
+<mat-form-field>
+  <input matInput type="text" placeholder="Nazwa produktu" name="title" ngModel>
+</mat-form-field>
+
+<mat-form-field>
+  <input matInput type="number" placeholder="Cena produktu" name="price" ngModel>
+</mat-form-field>
+
+<mat-form-field>
+  <mat-select placeholder="Kategoria" name="category" ngModel>
+    <mat-option *ngFor="let c of categories" [value]="c">{{c}}</mat-option>
+    </mat-select>
+</mat-form-field>
+
+<button mat-raised-button color="accent" type="submit">
+  <mat-icon>search</mat-icon> SZUKAJ
+</button>
+</form>
+
+<!-- powyżej zmiany z angular material-->
+
+<!-- <form name="searchForm">
 
   <div class="form-group">
     <label for="productTitle">Nazwa produktu: </label>
@@ -19,4 +42,4 @@
     <button type="submit" class="btn btn-primary btn-block">Szukaj</button>
   </div>
 
-</form>
+</form> -->
